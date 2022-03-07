@@ -5,7 +5,7 @@ using UnityEngine;
 public class MainCocktailScript : MonoBehaviour
 {
     GameObject InGameCocktail; //maybe this needs to be a seperate script
-
+   
     int[] tastes = new int[5];
     int[] profile = new int[3]; //becomes more once you add more profiles !!! 0 is nothing !!!
 
@@ -41,17 +41,8 @@ public class MainCocktailScript : MonoBehaviour
 
     void GenerateName()
     {
-       //update levels and then assign names 
+       LevelsUpdate();
+       //update levels and then assign names (switch statement)
     }
     
-    void UpdateIngredients()
-    {
-        //updates color and other visible aspects
-    }
-    void AddItem()
-    {
-        //based on another function that keeps track of the items to add while mixing
-        //add gameobject to 'InGameCocktail'
-        //
-    }
 }
