@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainCocktailScript : MonoBehaviour
+public class MainScript : MonoBehaviour
 {
-    GameObject InGameCocktail; //maybe this needs to be a seperate script
+    public GameObject InGameCocktail; //maybe this needs to be a seperate script
    
     int[] tastes = new int[5];
     int[] profile = new int[3]; //becomes more once you add more profiles !!! 0 is nothing !!!
@@ -19,6 +19,12 @@ public class MainCocktailScript : MonoBehaviour
     string MainTasteName;
     string SecondaryTasteName;
     string CharacterProfileName;
+
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
 
     void addIngredient(int sweet, int sour, int salty, int bitter, int umami, int character, int characterLvl)
     {
