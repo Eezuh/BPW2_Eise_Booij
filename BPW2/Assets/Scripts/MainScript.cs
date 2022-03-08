@@ -26,7 +26,7 @@ public class MainScript : MonoBehaviour
         Cursor.visible = true;
     }
 
-    void addIngredient(int sweet, int sour, int salty, int bitter, int umami, int character, int characterLvl)
+    public void addIngredient(int sweet, int sour, int salty, int bitter, int umami, int character, int characterLvl)
     {
         tastes[0] += sweet;
         tastes[1] += sour;
