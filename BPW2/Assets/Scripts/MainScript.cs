@@ -50,12 +50,12 @@ public class MainScript : MonoBehaviour
         {
             profile[character] += characterLvl;
         }
+
+        Debug.Log(tastes[0] + "and" + tastes[1] + "and" + tastes[2] + "and" + tastes[3] + "and" + tastes[4]);
     }
 
     public void LevelsUpdate() //doesnt work correctly yet :(
-    {
-        //if levels are the same, get a mix !!!! w
-        
+    {   
         int first = int.MinValue;
         int firstValue = 0;
         int second = int.MinValue;

@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 819436422138975013}
   - component: {fileID: 4649298082306189532}
   m_Layer: 5
-  m_Name: IngredientPrefab
+  m_Name: OldPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

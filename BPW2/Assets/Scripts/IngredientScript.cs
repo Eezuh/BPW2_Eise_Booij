@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IngredientScript : MainScript
+public class IngredientScript : MonoBehaviour
 {
+    public GameObject Cocktail;
     public int sweetness;
     public int sourness;
     public int saltiness;
@@ -14,6 +15,6 @@ public class IngredientScript : MainScript
 
     public void SendIngredients()
     {
-        addIngredient(sweetness, sourness, saltiness, bitterness, umaminess, character, characterlvl);
+        Cocktail.GetComponent<MainScript>().addIngredient(sweetness, sourness, saltiness, bitterness, umaminess, character, characterlvl);
     }
 }
