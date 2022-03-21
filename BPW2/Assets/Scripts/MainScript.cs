@@ -4,8 +4,19 @@ using UnityEngine;
 
 public class MainScript : MonoBehaviour
 {
-    public GameObject InGameCocktail; //maybe this needs to be a seperate script
-   
+    public GameObject InGameCocktail; //do you need this one?
+    private string CocktailGlass;
+
+    public GameObject Longdrink;
+    public GameObject bowl;
+    public GameObject cone;
+    public GameObject tumbler; 
+    public GameObject goblet;
+
+
+
+
+
     int[] tastes = new int[5];
     int[] profile = new int[5]; //becomes more once you add more profiles !!! 0 is nothing !!!
 
@@ -56,14 +67,14 @@ public class MainScript : MonoBehaviour
 
     public void LevelsUpdate() //doesnt work correctly yet :(
     {   
-        int first = int.MinValue;
+        int first = 0;
         int firstValue = 0;
         int second = int.MinValue;
         int secondValue = 0;
         int mainCharacter = profile[0];
         int i;
 
-        for (i = 1; i < tastes.Length; i++) //these return the index where the highest value is in
+        for (i = 0; i < tastes.Length; i++) //these return the index where the highest value is in
         {
             if (tastes[i] >= firstValue)
             {
@@ -78,7 +89,7 @@ public class MainScript : MonoBehaviour
                 second = i;
             }
         }
-        for (i = 1; i < profile.Length; i++)
+        for (i = 0; i < profile.Length; i++)
         {
             if (profile[i] > profile[mainCharacter])
             {
@@ -86,9 +97,35 @@ public class MainScript : MonoBehaviour
             }
         }
 
-        Debug.Log("main ingredient is:" + first + "with level" + tastes[first]); //returns 1 with level 0 always
+        Debug.Log("main ingredient is:" + first + "with level" + firstValue); 
+        Debug.Log("second ingredient is:" + second + "with level" + secondValue);
 
         GenerateName(first, second, mainCharacter);
+        DisplayCocktail(first);
+    }
+
+    void DisplayCocktail(int mainIngredient)
+    {
+        switch (mainIngredient)
+        {
+            case 0:
+                Longdrink.SetActive(true);
+            break;
+
+            case 1:
+                bowl.SetActive(true);
+                break;
+
+            case 2:
+                cone.SetActive(true);
+                break;
+            case 3:
+                tumbler.SetActive(true);
+                break;
+            case 4:
+                goblet.SetActive(true);
+                break;
+        }
     }
 
     void GenerateName(int index1, int index2, int index3)
@@ -155,7 +192,7 @@ public class MainScript : MonoBehaviour
         switch (index3)
         {
             case 0:
-                if (tastes[index3] > 4)
+                if (tastes[index3] > 3)
                 {
                     CharacterProfileName = "";
                 }
@@ -163,28 +200,28 @@ public class MainScript : MonoBehaviour
 
 
             case 1:
-                if (tastes[index3] > 4)
+                if (tastes[index3] > 3)
                 {
                     CharacterProfileName = "Metallic";
                 }
                 break;
 
             case 2:
-                if (tastes[index3] > 4)
+                if (tastes[index3] > 3)
                 {
                     CharacterProfileName = "Fruity";
                 }
                 break;
 
             case 3:
-                if (tastes[index3] > 4)
+                if (tastes[index3] > 3)
                 {
                     CharacterProfileName = "Bloody";
                 }
                 break;
 
             case 4:
-                if (tastes[index3] > 4)
+                if (tastes[index3] > 3)
                 {
                     CharacterProfileName = "...";
                 }
@@ -252,5 +289,4 @@ public class MainScript : MonoBehaviour
         finalname = SecondaryTasteName + CharacterProfileName + MainTasteName;
         Debug.Log(finalname);
     }
-    
 }
