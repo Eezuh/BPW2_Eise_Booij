@@ -194,8 +194,8 @@ public class MainScript : MonoBehaviour
 
         switch (index3)
         {
-            case 0:
-                if (tastes[index3] > 3)
+            case 0: //nothing
+                if (tastes[index3] > 2)
                 {
                     CharacterProfileName = "";
                 }
@@ -203,30 +203,30 @@ public class MainScript : MonoBehaviour
 
 
             case 1:
-                if (tastes[index3] > 3)
+                if (tastes[index3] > 2)
                 {
                     CharacterProfileName = "Metallic";
                 }
                 break;
 
             case 2:
-                if (tastes[index3] > 3)
+                if (tastes[index3] > 2)
                 {
-                    CharacterProfileName = "Fruity";
+                    CharacterProfileName = "Citric";
                 }
                 break;
 
             case 3:
-                if (tastes[index3] > 3)
+                if (tastes[index3] > 2)
                 {
                     CharacterProfileName = "Bloody";
                 }
                 break;
 
             case 4:
-                if (tastes[index3] > 3)
+                if (tastes[index3] > 2)
                 {
-                    CharacterProfileName = "...";
+                    CharacterProfileName = "Sea-";
                 }
                 break;
         }
