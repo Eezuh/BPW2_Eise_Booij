@@ -1149,6 +1149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InGameCocktail: {fileID: 0}
+  Customer: {fileID: 610289395}
   Longdrink: {fileID: 116352879}
   bowl: {fileID: 1499809241}
   cone: {fileID: 1519620547}

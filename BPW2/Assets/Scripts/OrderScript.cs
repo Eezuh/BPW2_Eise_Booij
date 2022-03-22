@@ -25,6 +25,7 @@ public class OrderScript : MonoBehaviour
 
     public void CompleteOrder()
     {
+
         if (accepted == true)
         {
             OrderText.text = success;
@@ -34,5 +35,30 @@ public class OrderScript : MonoBehaviour
             OrderText.text = fail;
         }
         
+    }
+
+    public void CheckOrder(int first, int firstvalue, int second, int secondvalue, int character)
+    {
+        if (MainIngredient != 5)
+        {
+            if (MainIngredient != first || firstvalue > MainIngredientMaxStrenght)
+            {
+                accepted = false;
+            }
+        }
+        if (SecondaryIngredient != 5)
+        {
+            if (SecondaryIngredient != second || secondvalue > SecondaryIngredientMaxStrenght)
+            {
+                accepted = false;
+            }
+        }
+        if (Character != 5)
+        {
+            if (Character != character)
+            {
+                accepted = false;
+            }
+        }
     }
 }

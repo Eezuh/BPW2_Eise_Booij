@@ -5,6 +5,7 @@ using UnityEngine;
 public class MainScript : MonoBehaviour
 {
     public GameObject InGameCocktail; //do you need this one?
+    public GameObject Customer;
     private string CocktailGlass;
 
     public GameObject Longdrink;
@@ -102,6 +103,8 @@ public class MainScript : MonoBehaviour
 
         GenerateName(first, second, mainCharacter);
         DisplayCocktail(first);
+        Customer.GetComponent<OrderScript>().CheckOrder(first, firstValue, second, secondValue, mainCharacter);
+
     }
 
     void DisplayCocktail(int mainIngredient)
