@@ -14,9 +14,14 @@ public class MainScript : MonoBehaviour
     public GameObject tumbler; 
     public GameObject goblet;
 
+    public ProgressBar sweet;
+    public ProgressBar sour;
+    public ProgressBar salty;
+    public ProgressBar bitter;
+    public ProgressBar umami;
+    public ProgressBar character;
 
-
-
+    public string CharacterName;
 
     int[] tastes = new int[5];
     int[] profile = new int[5]; //becomes more once you add more profiles !!! 0 is nothing !!!
@@ -48,6 +53,18 @@ public class MainScript : MonoBehaviour
         {
             tastes[i] = 0;
         }
+
+        CharacterName = "None";
+    }
+
+    private void Updatebars()
+    {
+        sweet.CurrentValueUpdate(tastes[0]);
+        sour.CurrentValueUpdate(tastes[1]);
+        salty.CurrentValueUpdate(tastes[2]);
+        bitter.CurrentValueUpdate(tastes[3]);
+        umami.CurrentValueUpdate(tastes[4]);
+        //character.CurrentValueUpdate(profile[character]); you need a specific character (0, 1 , 2)
     }
 
     public void addIngredient(int sweet, int sour, int salty, int bitter, int umami, int character, int characterLvl)
@@ -63,6 +80,7 @@ public class MainScript : MonoBehaviour
             profile[character] += characterLvl;
         }
 
+        Updatebars();
         Debug.Log(tastes[0] + "and" + tastes[1] + "and" + tastes[2] + "and" + tastes[3] + "and" + tastes[4]);
     }
 
