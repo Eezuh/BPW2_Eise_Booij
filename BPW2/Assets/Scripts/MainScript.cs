@@ -266,7 +266,7 @@ public class MainScript : MonoBehaviour
         switch (index3)
         {
             case 0: //nothing
-                if (tastes[index3] > 2) 
+                if (profile[index3] > 2) 
                 {
                     CharacterProfileName = "";
                 }
@@ -274,42 +274,42 @@ public class MainScript : MonoBehaviour
 
 
             case 1:
-                if (tastes[index3] > 2)
+                if (profile[index3] > 2)
                 {
                     CharacterProfileName = "Metallic ";
                 }
                 break;
 
             case 2:
-                if (tastes[index3] > 2)
+                if (profile[index3] > 2)
                 {
                     CharacterProfileName = "Citric ";
                 }
                 break;
 
             case 3:
-                if (tastes[index3] > 2)
+                if (profile[index3] > 2)
                 {
                     CharacterProfileName = "Bloody ";
                 }
                 break;
 
             case 4:
-                if (tastes[index3] > 2)
+                if (profile[index3] > 2)
                 {
                     CharacterProfileName = "Sea-";
                 }
                 break;
 
             case 5:
-                if (tastes[index3] > 2)
+                if (profile[index3] > 2)
                 {
                     CharacterProfileName = "Floral ";
                 }
                 break;
 
             case 6:
-                if (tastes[index3] > 2)
+                if (profile[index3] > 2)
                 {
                     CharacterProfileName = "Muddy ";
                 }
@@ -321,11 +321,11 @@ public class MainScript : MonoBehaviour
             case 0:
                 if (tastes[index1] > 4)
                 {
-                    SecondaryTasteName = "Sugarbomb";
+                    MainTasteName = "Sugarbomb";
                 }
                 else
                 {
-                    SecondaryTasteName = "Lemonade";
+                    MainTasteName = "Lemonade";
                 }
                 break;
 

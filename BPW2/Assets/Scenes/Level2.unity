@@ -2823,7 +2823,7 @@ MonoBehaviour:
   MainIngredient: 0
   MainIngredientMaxStrenght: 4
   SecondaryIngredient: 5
-  SecondaryIngredientMaxStrenght: 0
+  SecondaryIngredientMaxStrenght: 4
   Character: 4
   OrderText: {fileID: 824512629}
   mat: {fileID: 2100000, guid: d631b68d0e4c9dd45bedcdc1bbccc50d, type: 2}
@@ -3374,7 +3374,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4649298082306189532, guid: c98baa670ef6150428a1ddb45c482cf0, type: 3}
       propertyPath: sweetness
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4649298082306189532, guid: c98baa670ef6150428a1ddb45c482cf0, type: 3}
       propertyPath: umaminess
@@ -11467,7 +11467,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4649298082306189532, guid: c98baa670ef6150428a1ddb45c482cf0, type: 3}
       propertyPath: umaminess
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4649298082306189532, guid: c98baa670ef6150428a1ddb45c482cf0, type: 3}
       propertyPath: bitterness

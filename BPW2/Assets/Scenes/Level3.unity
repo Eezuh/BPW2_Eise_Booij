@@ -4593,7 +4593,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4649298082306189532, guid: c98baa670ef6150428a1ddb45c482cf0, type: 3}
       propertyPath: umaminess
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4649298082306189532, guid: c98baa670ef6150428a1ddb45c482cf0, type: 3}
       propertyPath: bitterness
@@ -7462,7 +7462,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4649298082306189532, guid: c98baa670ef6150428a1ddb45c482cf0, type: 3}
       propertyPath: sweetness
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4649298082306189532, guid: c98baa670ef6150428a1ddb45c482cf0, type: 3}
       propertyPath: umaminess
@@ -8974,11 +8974,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 951789f57a912c5418db76933b5e3ea9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainIngredient: 4
-  MainIngredientMaxStrenght: 6
+  MainIngredient: 3
+  MainIngredientMaxStrenght: 8
   SecondaryIngredient: 5
   SecondaryIngredientMaxStrenght: 0
-  Character: 2
+  Character: 1
   OrderText: {fileID: 1908339306}
   mat: {fileID: 2100000, guid: d631b68d0e4c9dd45bedcdc1bbccc50d, type: 2}
   order: Something with a metallic taste. Oh and make it extra bitter yeah?

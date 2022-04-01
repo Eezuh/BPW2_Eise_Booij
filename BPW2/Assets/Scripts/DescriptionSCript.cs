@@ -53,7 +53,7 @@ public class DescriptionSCript : MonoBehaviour
                 soBar.fillAmount = 0f;
                 saBar.fillAmount = 0f;
                 biBar.fillAmount = 0.25f;
-                umBar.fillAmount = 0.25f;
+                umBar.fillAmount = 0f;
                 charBar.fillAmount = 0.33f;
                 break;
 
@@ -73,7 +73,7 @@ public class DescriptionSCript : MonoBehaviour
                 Name.text = "Nonio Liquor";
                 Description.text = "...";
                 Character.text = "None";
-                swBar.fillAmount = 0.5f;
+                swBar.fillAmount = 0.25f;
                 soBar.fillAmount = 0f;
                 saBar.fillAmount = 0f;
                 biBar.fillAmount = 0.5f;

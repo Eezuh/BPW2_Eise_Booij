@@ -5818,7 +5818,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4649298082306189532, guid: c98baa670ef6150428a1ddb45c482cf0, type: 3}
       propertyPath: sweetness
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4649298082306189532, guid: c98baa670ef6150428a1ddb45c482cf0, type: 3}
       propertyPath: umaminess
@@ -8609,7 +8609,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4649298082306189532, guid: c98baa670ef6150428a1ddb45c482cf0, type: 3}
       propertyPath: umaminess
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4649298082306189532, guid: c98baa670ef6150428a1ddb45c482cf0, type: 3}
       propertyPath: bitterness
