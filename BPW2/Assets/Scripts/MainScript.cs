@@ -24,7 +24,7 @@ public class MainScript : MonoBehaviour
     public string CharacterName;
 
     int[] tastes = new int[5];
-    int[] profile = new int[5]; //becomes more once you add more profiles !!! 0 is nothing !!!
+    int[] profile = new int[6]; //becomes more once you add more profiles !!! 0 is nothing !!!
 
     int floralLvl;
     int metallicLvl;
@@ -213,7 +213,7 @@ public class MainScript : MonoBehaviour
         switch (index3)
         {
             case 0: //nothing
-                if (tastes[index3] > 2)
+                if (tastes[index3] > 2) 
                 {
                     CharacterProfileName = "";
                 }
@@ -245,6 +245,13 @@ public class MainScript : MonoBehaviour
                 if (tastes[index3] > 2)
                 {
                     CharacterProfileName = "Sea-";
+                }
+                break;
+
+            case 5:
+                if (tastes[index3] > 2)
+                {
+                    CharacterProfileName = "Floral";
                 }
                 break;
         }
