@@ -44,8 +44,6 @@ public class MainScript : MonoBehaviour
     private void Start()
     {
         int i;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
 
         for (i = 1; i < tastes.Length; i++)
         {
@@ -83,7 +81,6 @@ public class MainScript : MonoBehaviour
         }
 
         Updatebars();
-        Debug.Log(tastes[0] + "and" + tastes[1] + "and" + tastes[2] + "and" + tastes[3] + "and" + tastes[4]);
     }
 
     public void resetIngredients() 
