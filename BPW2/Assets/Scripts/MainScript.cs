@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class MainScript : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class MainScript : MonoBehaviour
     public string CharacterName;
 
     int[] tastes = new int[5];
-    int[] profile = new int[6]; //becomes more once you add more profiles !!! 0 is nothing !!!
+    int[] profile = new int[7]; //becomes more once you add more profiles !!! 0 is nothing !!!
 
     int floralLvl;
     int metallicLvl;
@@ -38,13 +39,15 @@ public class MainScript : MonoBehaviour
     string CharacterProfileName;
     string finalname;
 
+    public TextMeshProUGUI CocktailName;
+
     private void Start()
     {
         int i;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-        for (i = 1; i < tastes.Length; i++) //check if these are really necessary
+        for (i = 1; i < tastes.Length; i++)
         {
             tastes[i] = 0;
         }
@@ -64,7 +67,6 @@ public class MainScript : MonoBehaviour
         salty.CurrentValueUpdate(tastes[2]);
         bitter.CurrentValueUpdate(tastes[3]);
         umami.CurrentValueUpdate(tastes[4]);
-        //character.CurrentValueUpdate(profile[character]); you need a specific character (0, 1 , 2)
     }
 
     public void addIngredient(int sweet, int sour, int salty, int bitter, int umami, int character, int characterLvl)
@@ -84,13 +86,30 @@ public class MainScript : MonoBehaviour
         Debug.Log(tastes[0] + "and" + tastes[1] + "and" + tastes[2] + "and" + tastes[3] + "and" + tastes[4]);
     }
 
-    public void LevelsUpdate() //doesnt work correctly yet :(
+    public void resetIngredients() 
+    {
+        tastes[0] = 0;
+        tastes[1] = 0;
+        tastes[2] = 0;
+        tastes[3] = 0;
+        tastes[4] = 0;
+        profile[0] = 0;
+        profile[1] = 0;
+        profile[2] = 0;
+        profile[3] = 0;
+        profile[4] = 0;
+        profile[5] = 0;
+
+        Updatebars();
+    }
+
+    public void LevelsUpdate()
     {   
         int first = 0;
         int firstValue = 0;
         int second = int.MinValue;
         int secondValue = 0;
-        int mainCharacter = profile[0];
+        int mainCharacter = 0;
         int i;
 
         for (i = 0; i < tastes.Length; i++) //these return the index where the highest value is in
@@ -114,37 +133,74 @@ public class MainScript : MonoBehaviour
             {
                 mainCharacter = i;
             }
+            else if (profile[i] == profile[mainCharacter])
+            {
+                if (profile[mainCharacter] == 3)
+                {
+                    mainCharacter = 6;
+                    profile[mainCharacter] = 3;
+                }
+            }
         }
 
         Debug.Log("main ingredient is:" + first + "with level" + firstValue); 
         Debug.Log("second ingredient is:" + second + "with level" + secondValue);
 
         GenerateName(first, second, mainCharacter);
-        DisplayCocktail(first);
+        DisplayCocktail(first, second);
+        CocktailName.text = finalname;
         Customer.GetComponent<OrderScript>().CheckOrder(first, firstValue, second, secondValue, mainCharacter);
 
     }
 
-    void DisplayCocktail(int mainIngredient)
+    void DisplayCocktail(int mainIngredient, int secondaryIngredient)
     {
+        GameObject glass = null;
+
         switch (mainIngredient)
         {
             case 0:
                 Longdrink.SetActive(true);
+                glass = Longdrink;
             break;
 
             case 1:
                 bowl.SetActive(true);
+                glass = bowl;
                 break;
-
+                
             case 2:
                 cone.SetActive(true);
+                glass = cone;
                 break;
             case 3:
                 tumbler.SetActive(true);
+                glass = tumbler;
                 break;
             case 4:
                 goblet.SetActive(true);
+                glass = goblet;
+                break;
+        }
+
+        switch (secondaryIngredient)
+        {
+            case 0:
+                glass.transform.Find("Cherry").gameObject.SetActive(true);
+                break;
+
+            case 1:
+                glass.transform.Find("Lemon").gameObject.SetActive(true);
+                break;
+
+            case 2:
+                glass.transform.Find("Sardine").gameObject.SetActive(true);
+                break;
+            case 3:
+                glass.transform.Find("Olive").gameObject.SetActive(true);
+                break;
+            case 4:
+                glass.transform.Find("Cheese").gameObject.SetActive(true);
                 break;
         }
     }
@@ -156,11 +212,11 @@ public class MainScript : MonoBehaviour
             case 0:
                 if(tastes[index2] > 4)
                 {
-                    SecondaryTasteName = "Sugarbomb";
+                    SecondaryTasteName = "Sugarbomb" ;
                 }
                 else
                 {
-                    SecondaryTasteName = "Sweet";
+                    SecondaryTasteName = "Sweet ";
                 }
             break;
 
@@ -168,44 +224,44 @@ public class MainScript : MonoBehaviour
             case 1:
                 if (tastes[index2] > 4)
                 {
-                    SecondaryTasteName = "Acidic";
+                    SecondaryTasteName = "Acidic ";
                 }
                 else
                 {
-                    SecondaryTasteName = "Sour";
+                    SecondaryTasteName = "Sour ";
                 }
                 break;
 
             case 2:
                 if (tastes[index2] > 4)
                 {
-                    SecondaryTasteName = "Seawater"; //not an adjective
+                    SecondaryTasteName = "Pickled "; 
                 }
                 else
                 {
-                    SecondaryTasteName = "Salty"; //meh
+                    SecondaryTasteName = "Saline "; 
                 }
                 break;
 
             case 3:
                 if (tastes[index2] > 4)
                 {
-                    SecondaryTasteName = "Pungent";
+                    SecondaryTasteName = "Pungent ";
                 }
                 else
                 {
-                    SecondaryTasteName = "Bitter"; //???
+                    SecondaryTasteName = "Bitter ";
                 }
                 break;
 
             case 4:
                 if (tastes[index2] > 4)
                 {
-                    SecondaryTasteName = "Starchy";
+                    SecondaryTasteName = "Starchy ";
                 }
                 else
                 {
-                    SecondaryTasteName = "Savoury"; //??? meaty, dry etc
+                    SecondaryTasteName = "Savoury ";
                 }
                 break;
         }
@@ -223,21 +279,21 @@ public class MainScript : MonoBehaviour
             case 1:
                 if (tastes[index3] > 2)
                 {
-                    CharacterProfileName = "Metallic";
+                    CharacterProfileName = "Metallic ";
                 }
                 break;
 
             case 2:
                 if (tastes[index3] > 2)
                 {
-                    CharacterProfileName = "Citric";
+                    CharacterProfileName = "Citric ";
                 }
                 break;
 
             case 3:
                 if (tastes[index3] > 2)
                 {
-                    CharacterProfileName = "Bloody";
+                    CharacterProfileName = "Bloody ";
                 }
                 break;
 
@@ -251,7 +307,14 @@ public class MainScript : MonoBehaviour
             case 5:
                 if (tastes[index3] > 2)
                 {
-                    CharacterProfileName = "Floral";
+                    CharacterProfileName = "Floral ";
+                }
+                break;
+
+            case 6:
+                if (tastes[index3] > 2)
+                {
+                    CharacterProfileName = "Muddy ";
                 }
                 break;
         }
@@ -288,29 +351,29 @@ public class MainScript : MonoBehaviour
                 }
                 else
                 {
-                    MainTasteName = "..."; //???
+                    MainTasteName = "Brine";
                 }
                 break;
 
             case 3:
                 if (tastes[index1] > 4)
                 {
-                    MainTasteName = "...";
+                    MainTasteName = "Concentrate";
                 }
                 else
                 {
-                    MainTasteName = "..."; //???
+                    MainTasteName = "Shot";
                 }
                 break;
 
             case 4:
                 if (tastes[index1] > 4)
                 {
-                    MainTasteName = "...";
+                    MainTasteName = "Pulp";
                 }
                 else
                 {
-                    MainTasteName = "Shake"; //??? meaty, dry etc
+                    MainTasteName = "Shake";
                 }
                 break;
         }
