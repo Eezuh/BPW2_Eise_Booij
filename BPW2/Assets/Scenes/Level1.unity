@@ -1728,7 +1728,7 @@ RectTransform:
   - {fileID: 734592601}
   - {fileID: 1405447909}
   m_Father: {fileID: 2096630752}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4119,9 +4119,10 @@ MonoBehaviour:
   MainIngredient: 1
   MainIngredientMaxStrenght: 4
   SecondaryIngredient: 5
-  SecondaryIngredientMaxStrenght: 0
+  SecondaryIngredientMaxStrenght: 3
   Character: 3
   OrderText: {fileID: 395263797}
+  mat: {fileID: 2100000, guid: d631b68d0e4c9dd45bedcdc1bbccc50d, type: 2}
   order: Something bloody and sour, please
   success: Thanks bruh
   fail: What the darn is this?
@@ -11822,7 +11823,7 @@ RectTransform:
   - {fileID: 1998616875}
   - {fileID: 923180852}
   m_Father: {fileID: 2096630752}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -12578,7 +12579,7 @@ RectTransform:
   - {fileID: 395263799}
   - {fileID: 1844479417}
   m_Father: {fileID: 2096630752}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -12802,9 +12803,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1932550186}
   - {fileID: 207617166}
   - {fileID: 2037860562}
+  - {fileID: 1932550186}
   m_Father: {fileID: 837560101}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
